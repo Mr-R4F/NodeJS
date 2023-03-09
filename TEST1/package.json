@@ -1,0 +1,17 @@
+{
+  "name": "test-enviroment",
+  "version": "1.0.0",
+  "description": "Primeiro projeto em node com npms",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

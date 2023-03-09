@@ -1,0 +1,45 @@
+O Node.js é uma plataforma de desenvolvimento em JavaScript que permite que você crie aplicativos em tempo real, escaláveis e de alta performance do lado do servidor. Aqui estão algumas das principais razões pelas quais você pode querer usar o Node.js:
+
+JavaScript em ambos os lados: Uma das principais vantagens do Node.js é que ele permite que você use JavaScript tanto no lado do cliente quanto no lado do servidor. Isso torna o desenvolvimento mais fácil e permite que você compartilhe código entre o lado do cliente e do servidor.
+
+Desempenho escalável: O Node.js usa um modelo de E/S não bloqueante, que permite que ele lide com um grande número de conexões simultâneas de forma eficiente. Isso torna o Node.js ideal para aplicativos que precisam lidar com muitas conexões de forma escalável, como aplicativos de bate-papo em tempo real, jogos multiplayer online e aplicativos de streaming de vídeo.
+
+Comunidade ativa: O Node.js tem uma comunidade de desenvolvedores muito ativa e grande quantidade de bibliotecas de código aberto disponíveis. Isso significa que você pode encontrar soluções para quase todos os problemas de desenvolvimento que possa ter, e que existem muitas oportunidades para colaborar em projetos de código aberto.
+
+Ecossistema de pacotes: O Node.js tem um gerenciador de pacotes chamado npm, que é o maior repositório de pacotes de software do mundo. Isso significa que você pode facilmente instalar e usar bibliotecas de terceiros em seus projetos, o que pode economizar tempo e esforço.
+
+Plataforma multiplataforma: O Node.js é executado em várias plataformas, incluindo Windows, macOS e Linux. Isso significa que você pode desenvolver e implantar aplicativos Node.js em uma ampla variedade de ambientes, sem precisar se preocupar com a compatibilidade de plataforma.
+
+O npx também é uma ferramenta de interface de linha de comando,
+ cujo propósito é facilitar a instalação e o gerenciamento de 
+ dependências hospedadas no registro do npm.
+
+ pt básica de bancos relacionais / mvc / conexão
+ dá um log das querys..
+
+
+O npm é uma ferramenta que ajuda os desenvolvedores a gerenciar e instalar pacotes de 
+software em seus projetos. Para entender melhor, imagine que você está construindo 
+uma casa de blocos de brinquedo, e cada bloco é um pedaço de software. O npm é como
+ uma caixa de ferramentas que você pode usar para pegar os blocos de que precisa e 
+ colocá-los juntos para construir sua casa. Com o npm, você pode instalar e atualizar 
+ esses blocos (ou pacotes) facilmente e com segurança.
+
+Já o npx é uma ferramenta que vem junto com o npm, e que é usada para executar 
+pacotes de software diretamente no terminal do seu computador. É como se fosse uma 
+ferramenta que permite que você brinque com seus blocos de brinquedo sem precisar 
+construir uma casa inteira primeiro. Vamos supor que você queira experimentar um novo 
+pacote de software, como um jogo de blocos de construção. Com o npx, você pode executar
+ esse jogo diretamente no seu terminal sem precisar instalá-lo primeiro. É como se você 
+ pudesse pegar um bloco de brinquedo e começar a brincar com ele imediatamente, sem precisar
+  montar toda a casa.
+
+Então, resumindo, o npm é uma ferramenta para gerenciar e instalar pacotes de software 
+em projetos, enquanto o npx é uma ferramenta para executar pacotes de software diretamente
+ no terminal, sem precisar instalá-los primeiro.
+
+ -- cadastra conexão dentro da model
+
+ O Roteamento refere-se à determinação de como um aplicativo responde a uma solicitação do 
+ cliente (PARA ONDE VAI LEVA-LO) por um endpoint específico, que é uma URI (ou caminho) e um método de solicitação 
+ HTTP específico (GET, POST, e assim por diante).

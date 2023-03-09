@@ -1,0 +1,3 @@
+instalar os seguintes pacotes para usar a aplicação: nodemon, mysql2, express, sequelizer, sequelizer-cli, ejs
+ou npm install -> já os instala
+ferramentas para loading de scripts -> consign / require-directory ou cli direto

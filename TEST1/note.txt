@@ -1,0 +1,132 @@
+/* 
+NODE JS
+
+- Ambiente que permite a execução de código JS, sem a necessidade de um navegador (fora do navegador)
+- Antes do node só podia executar código JS, no navegador.
+- Utiliza motor V8 Engine(mesmo do chrome) (pega o código JS e converte para código de máquina e retorna resultado)
+- Processa o código assim como o chrome
+- Utilizado para construir backends (APIs) / CRUDs (e retornar json posteriormente)
+
+
+Funcionamento
+
+- Possui um núcleo (single threaded), mas suporta operações simultâneas com este único núcleo (non-blocking) (não fica travado em uma requisição para atender a próxima)
+- e como fazer várias requisições em um único núcleo?
+-> Faz a requisição mas não espera ficar pronta (assincrona)
+
+Vantagens
+
+- Ótimo uso de memória (baixo custo)
+- Harmonia com front (pois ambos usam JS)(curva de aprendizado não é grande já que deriva do JS)
+- Muito rápido, simples e flexível
+- Presença extremamente forte no mercado
+- Importação e Exportação de módulos próprios
+
+Módulos
+- Podemos criar próprios módulos (arquivos) e importá-los. (sempre que se cria um arquivo (módulo) pode-se importar/ exportar)
+- Já vem com módulos pré-instalados (modifica, faz requisições .... etc)
+- Para importar usar o CommonJS. -> require('módulo'); inclusive outros arquivos
+- (tornou o node mais popular) NPMs - Node Package Manage - gerenciador de dependências do NODE - permite a instalação de módulos de terceiros
+- node_modules - onde os módulos (ou bibliotecas) são armazenados.
+- package.json - lista todos os módulos instalados pelos NPM (como se fosse um contrato que define os módulos).
+
+e como usá-lo? Há (4*) comandos básicos para seu uso: (necessário para a instalação de módulos de terceiros)
+
+- npm init - cria o package.json (inicializa o npm / projeto) (permite instalar módulos de terceiros)
+-> na configuração editar de acordo com a preferência
+- npm install <nome-do-pacote> - instala o pacote localmente (para uso apenas no projeto atual)
+- npm -g install <nome-do-pacote> - instala o pacote globalmente (para uso em todos os projetos)
+ou (como dependência de desenvolvimento)
+- npm install <nome-do-pacote> --save-dev - instala o pacote como dependência de desenvolvimento
+
+=====
+- Para exportar - modules.exports
+- Para executar o arquivo node - node <nome-do-arquivo>
+
+- no node a cada modificação é necessário reiniciar o servidor
+para resolver isso pode-se usar um pacote chamado nodemon que reinicia 
+o server automaticamente a cada atualização
+
+- Como o node_modules não sobe para o github
+para seu uso em outra máquina usar o seguinte comando:
+- npm install - que instala todas as dependências do projeto (de acordo com o que está na package.json 
+e recria a pasta node_modules)
+
+- package.lock.josn - lista as versões das dependências / módulos (que certifica que todoas que forem
+usar o projeto tenham sempre as mesmas versões)
+
+- módulos nativos essenciais -> path (trabalha com diretórios de arquivos), http/s, fs
+
+- scripts (em caso de ambiente de desenvolvimento ou local) -> comandos para serem executados no node
+- para executar um npm usar: npm run <nome-do-pacote> <nome-do-arquivo> / <nome-do-pacote> <nome-do-arquivo> (globalmente apenas)
+- npm run <nome-do-script> - dev / localmente
+
+path -> trabalha com diretórios de arquivos (seu uso depende do prósito e referência)
+fs - manipula arquivos na máquina. (ler,cria,edita,remove,mostra)
+
+fácil manipulação de arquivos com o fs e path
+
+//criar back end node nativos e depois express (que torna o esse processo muito mais fácil)
+//para uso geralmente usa-se json do back para o front consumir
+na real o conteúdo vem do banco
+pode-se pegar dados (se baseando) na url
+
+****CRIAR VÁRIÁVEIS DE AMBIENTE PARA EVITAR VAZAMENTO
+->para definir váriaveis = exp ALGO_ALGO -> MYSQL_PASSWORD (exp)
+- necessário biblioteca dotenv para uso
+- require e método config() / faz com que seja possível usar as variáveis na aplicação
+
+- após definir estrutura de dados
+- models (schemas / esqueletos / tabelas) (nome em camel uppercase)
+- fazer esquemoas e depois model
+
+- endpoints (destino final das requisições)
+- usa métodos http para manipular dados
+
+APIs
+para post e put /patch uso do body (corpo da requisição / dados)
+sinalizar para o express vai receber json nas requisições
+send envia string a depender
+parametros -> /nome/:parametro (para consulta no banco)
+middlewares -> funções executadas antes de qualquer ação
+use() -> usa middlewares
+3 parametros a depender (padrões e next (deixa seguir a execução)) 
+o next deve ser chamado 
+app.use((req,res,next) => { //chama isso primeiro está uma fase antes (PASSA O NEXT senão não deixar passar)
+    //executado antes da requição
+    //pode-se fazer qualquer cois antes da requisição
+})
+
+mostrar dados
+as vezes se usa em conjunto com o react (json e mostrar)
+mas pode-se também mostrar direto em HTML (ejs)
+instalar o ejs -> npm install ejs
+app.set('view engine', 'ejs'); //diz pro express que vai usar como view o ejs.
+ficam dentro de src
+app.set('views', 'pasta');
+
+endpoints para mostrar ->res.render("<nome-da-view>")
+sintaxe -> <% %> - declara variáveis
+ <%= %> -> mostra texto (usa var declarada)
+
+ para manda para o html usar -> res.render('<nome-do-arquivo>', {<propriedade>: <model>} / {propriedade (já pega os dados diretamente)})
+ loop para renderizar só pode escrever uma linha para cada <% %>
+
+ é possivel componentizar (usar o código em outros locais)
+ <%- include('<nome-da-pasta>') %> - para usar
+ cria várias partes e injeta (pode em outro arquivo)
+
+forma de comunicação com o banco (abstração)
+query builder (knex.js)
+orm (geralmente vem com um query builder) - sequelizer
+migrations -> manda as tables para o banco (versões) como o bd vai se comportar em tempo de vida da aplicação / arquivos que determinam a estrutura do bd (histórico de alteração)
+active records
+model - como vai ser a comunicação da aplicação com o banco / schema /esqueleto da tabela
+sequelize cli -da interface de linhas de comando para fazer comandos do sequelize
+credenciais da base de dados
+
+config/config.jsom - arquivo padrão que o sequealize entende para buscar as config basica da base de dados
+
+não sabe as credenciais de acesso deve informar
+
+*/
